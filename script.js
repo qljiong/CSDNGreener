@@ -102,10 +102,16 @@ var version = "1.4.9";
     if (remove) {
         $(".recommend-box").remove();
     }
+    
+    // 删除评论上方的行内广告
+    var onelineAd = $("div.t0");
+    if(onelineAd.hasClass("clearfix")){
+       onelineAd.remove();
+    }
 
     //推荐内容开关
     $(".blog-content-box").after("<div class='blog-content-box' id='switch'></div>");
-    $(".comment-edit-box").after("<center><font size='1px'>第一次点击“显示推荐内容”按钮可能失效，请刷新后再次点击<br>CSDN优化脚本已为您全面提升阅读体验！<br><a href='https://greasyfork.org/zh-CN/scripts/378351-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0-csdn%E9%A1%B5%E9%9D%A2%E6%B5%AE%E7%AA%97%E5%B9%BF%E5%91%8A%E5%AE%8C%E5%85%A8%E8%BF%87%E6%BB%A4%E5%87%80%E5%8C%96-%E5%87%80%E5%8C%96%E5%A4%8D%E5%88%B6%E5%86%85%E5%AE%B9-%E8%87%AA%E5%8A%A8%E5%B1%95%E5%BC%80-%E8%AE%A9%E4%BD%A0%E4%B8%93%E6%B3%A8%E4%BA%8E%E6%96%87%E7%AB%A0-%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%8A%9F%E8%83%BD%E4%BD%BF%E7%94%A8'>点这里收藏脚本支持我！</a> V" + version + "</font></center>");
+    
     if (remove) {
         $("#switch").append("<button class='hide-recommend-button'>显示推荐内容</button>");
     } else {
